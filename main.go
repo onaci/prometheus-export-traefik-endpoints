@@ -32,8 +32,10 @@ var (
 
 func main() {
 	go func() {
-		updateEndpoints()
-		time.Sleep(5 * time.Minute)
+		for {
+			updateEndpoints()
+			time.Sleep(5 * time.Minute)
+		}
 	}()
 
 	flag.Parse()
